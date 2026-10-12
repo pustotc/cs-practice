@@ -1,5 +1,5 @@
 def winner(names,scores):
-    mx,mxi = 0,0
+    mx,mxi = min(scores),0
     for i in range(len(scores)):
         if scores[i]>mx:
             mx=scores[i]
