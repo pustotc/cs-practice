@@ -8,3 +8,13 @@ def winner(scores):
 def average(scores):
     if len(scores)>0:
         return sum(scores)/len(scores)
+def ranking(scores,names):
+    ind = list(range(len(scores)))
+    ind = sorted(ind, key = lambda i: scores[i])
+    ind.reverse
+    result = []
+    for i in ind:
+        result.append(names[i])
+    return result
+
+    
