@@ -5,3 +5,6 @@ def winner(scores):
             mx=scores[i]
             mxi=i
     return mxi
+def average(scores):
+    if len(scores)>0:
+        return sum(scores)/len(scores)
