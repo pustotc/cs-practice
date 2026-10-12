@@ -7,11 +7,12 @@ def winner(names,scores):
     return names[mxi]
 def average(scores):
     if len(scores)>0:
-        return sum(scores)/len(scores)
+        return round(sum(scores)/len(scores),2)
+    else:
+        return 0
 def ranking(names,scores):
     ind = list(range(len(scores)))
-    ind = sorted(ind, key = lambda i: scores[i])
-    ind.reverse
+    ind = sorted(ind, key = lambda i: scores[i],reverse=True)
     result = []
     for i in ind:
         result.append(names[i])
