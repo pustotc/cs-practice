@@ -16,3 +16,16 @@ def read_rows(lines):
             lined[z]=l
         allline.append(lined)
     return allline
+def count_types(rows):
+    count = {}
+    if not rows:
+        return count
+    fk = list(rows[0].keys())[0]
+    for r in rows:
+        tip = row.get(fk)
+        if tip:
+            if tip not in count:
+                count[tip] = 1
+            else:
+                count[tip]+=1
+    return count
