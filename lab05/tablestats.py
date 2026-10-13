@@ -18,14 +18,19 @@ def read_rows(lines):
     return allline
 def count_types(rows):
     count = {}
-    if not rows:
-        return count
-    fk = list(rows[0].keys())[0]
     for r in rows:
-        tip = row.get(fk)
+        tip = row.get('тип')
         if tip:
             if tip not in count:
                 count[tip] = 1
             else:
                 count[tip]+=1
     return count
+def total_minutes(rows,kind):
+    itog = 0
+    f = false
+    for r in rows:
+        if r.get('тип') == kind:
+            m = r.get('минуты','')
+            m = m.replace(',','.')
+            
