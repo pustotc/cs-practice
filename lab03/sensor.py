@@ -19,10 +19,7 @@ print(x1)
 print(xe)
 print(x3)
 print(f'{mx:.1f}')
-print(f'{s/c:.1f}')
-
-    
-    
-
-
-
+if c<1:
+    print('Error')
+else:
+    print(f'{s/c:.1f}')
