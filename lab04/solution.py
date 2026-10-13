@@ -1,3 +1,5 @@
+names =  ["Аня", "Боря", "Вика"]
+scores = [7.0,   9.0,    9.0]
 def winner(names,scores):
     mx,mxi = min(scores),0
     for i in range(len(scores)):
@@ -24,4 +26,8 @@ def above_average(names,scores):
         if scores[i]>av:
             result.append(names[i])
     return result
-    
+if __name__ == '__main__':
+    print(winner(names, scores))
+    print(average(scores))
+    print(ranking(names, scores))
+    print(above_average(names, scores))
