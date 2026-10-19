@@ -31,6 +31,13 @@ def total_minutes(rows,kind):
     f = false
     for r in rows:
         if r.get('тип') == kind:
-            m = r.get('минуты','')
-            m = m.replace(',','.')
+            f = True
+            mi = row.get('минуты', '0')
+            mi = mi.replace(',','.')
+            trymi = mi.replace('-','',1).replace('.','',1)
+            if trymi.isdigit():
+                itog+=float(mi)
+        if not(f):
+            return 0
+        return rount(itog,1)
             
