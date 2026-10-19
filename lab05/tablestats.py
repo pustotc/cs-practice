@@ -40,4 +40,9 @@ def total_minutes(rows,kind):
         if not(f):
             return 0
         return rount(itog,1)
+def to_csv(counts):
+    lines = ['тип, кол-во']
+    for kind in sorted(counts.keys()):
+        lines.append(f'{kind},{counts[kind]}')
+    return '\n'.join(lines) + '\n'
             
