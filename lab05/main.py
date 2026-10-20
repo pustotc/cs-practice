@@ -3,10 +3,10 @@ import sys
 import tablestats
 def main():
     name1 = input().strip()
-    if not os.path.exists(file_name):
-        print(f"Файл {file_name} не найден.")
+    if not os.path.exists(name1):
+        print(f"Файл {name1} не найден.")
         return
-    with open(file_name, "r", encoding="utf-8") as file:
+    with open(name1, "r", encoding="utf-8") as file:
         rows = tablestats.read_rows(file)
     total_rows = len(rows)
     counts = tablestats.count_types(rows)
@@ -18,5 +18,5 @@ def main():
     csv_output = tablestats.to_csv(counts)
     with open("summary.csv", "w", encoding="utf-8") as out:
         out.write(csv_output)
-    if __name__ == "__main__":
-        main()
+if __name__ == "__main__":
+    main()
