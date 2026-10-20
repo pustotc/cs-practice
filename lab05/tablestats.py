@@ -1,29 +1,21 @@
 def read_rows(lines):
     zag = None
     allline = []
-
     for line in lines:
         cleaned = line.strip('\n')
         if not cleaned.strip():
             continue
-
         linel = [x.strip() for x in cleaned.split(',')]
-
         if zag is None:
             zag = linel
             continue
-
         if len(linel) != len(zag):
             continue
-
         lined = {}
         for z, l in zip(zag, linel):
             lined[z] = l
         allline.append(lined)
-
     return allline
-
-
 def count_types(rows):
     count = {}
     for r in rows:
@@ -34,8 +26,6 @@ def count_types(rows):
             else:
                 count[tip] += 1
     return count
-
-
 def total_minutes(rows, kind):
 
     itog = 0.0
@@ -49,10 +39,7 @@ def total_minutes(rows, kind):
                 except ValueError:
                     continue
     return round(itog, 1)
-
-
 def to_csv(counts):
-
     lines = ['тип,количество']
     for kind in sorted(counts.keys()):
         lines.append(f"{kind},{counts[kind]}")
