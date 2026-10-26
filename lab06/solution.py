@@ -8,3 +8,15 @@ def count_items(values):
     return itog
 def unique_sorted(values):
     return sorted(set(values))
+def common(first, second):
+    itog = []
+    for f in first:
+        if f in second:
+            itog.append(f)
+    return sorted(itog)
+def only_in_first(first, second):
+    itog = []
+    for f in first:
+        if f not in second:
+            itog.append(f)
+    return sorted(itog)
