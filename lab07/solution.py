@@ -6,12 +6,15 @@ def reshape_rows(values, width):
 def block(matrix, rows, columns):
     result = np.array(matrix)
     result = result[np.ix_(rows,columns)]
-    return result
+    return result.tolist()
 def column_means(matrix):
     result = np.array(matrix)
     result = np.mean(result,axis=0)
-    return result
+    return result.tolist()
 def column_range(matrix, column):
+    m = np.array(matrix)
+    mColumn = m[:,column]
+    return float(np.max(mColumn) - np.min(mColumn))
     
     
     
