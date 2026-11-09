@@ -1,20 +1,26 @@
 def reshape_rows(values, width):
     if len(values) % width != 0:
         return []
-    result = np.array(values)
-    return result.reshape(-1,width)
+    result = np.asarray(values)
+    return np.rount(result.reshape(-1,width),6).tolist()
 def block(matrix, rows, columns):
-    result = np.array(matrix)
+    if not matrix:
+        return []
+    result = np.asarray(matrix)
     result = result[np.ix_(rows,columns)]
-    return result.tolist()
+    return np.round(result,6).tolist()
 def column_means(matrix):
-    result = np.array(matrix)
+    if not matrix or len(matrix)==0:
+        return []
+    result = np.asarray(matrix)
     result = np.mean(result,axis=0)
-    return result.tolist()
+    return np.round(result,6).tolist()
 def column_range(matrix, column):
-    m = np.array(matrix)
+    if not matrix or len(matrix)==0:
+        return 0.0
+    m = np.asarray(matrix)
     mColumn = m[:,column]
-    return float(np.max(mColumn) - np.min(mColumn))
+    return float(np.round(np.max(mColumn) - np.min(mColumn),6))
     
     
     
