@@ -1,10 +1,10 @@
 import numpy as np
 
 def reshape_rows(values, width):
-    if len(values) % width != 0:
+    if len(values) % width != 0 or len(values)<1:
         return []
     result = np.asarray(values)
-    return np.rount(result.reshape(-1,width),6).tolist()
+    return np.round(result.reshape(-1,width),6).tolist()
 def block(matrix, rows, columns):
     if not matrix:
         return []
