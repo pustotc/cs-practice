@@ -13,12 +13,12 @@ def change_vector(values):
     c = np.asarray(values).copy()
     c[2:5] = 99
     c[::2] = -1
-    return c
+    return c.tolist()
 def cap_above(values, limit):
     a =  np.asarray(values)
     a[a>limit] = limit
     return a.tolist()
 def celsius_to_fahrenheit(values):
     a =  np.asarray(values)
-    fahrenheit = arr * 9 / 5 + 32
+    fahrenheit = a * 9 / 5 + 32
     return fahrenheit.tolist()
